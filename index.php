@@ -37,11 +37,10 @@ if (isset($_GET['code'])) {
 
             echo "Welcome back " . $userInfo['email'];
             echo "<br/>";
-            echo '<a href="">Logout</a>';
+            echo '<a href="'.$appUrl.'/logout">Logout</a>';
             
         } else { ?>
-        <p><a href="login.php">Login</a></p>
-        <p><a href="<?php echo $appUrl ?>/signup">Register</a></p>
+        <p><a href="login.php">Login/Signup</a></p>
         
         <?php
         } 
