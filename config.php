@@ -2,13 +2,17 @@
 require 'vendor/autoload.php';
 
 $appUrl = "PLACE_YOUR_PROJECT_URL_HERE";
+$clientID = "PLACE_YOUR_CLIENT_ID_HERE";
+$clientID = "PLACE_YOUR_CLIENT_SECRET_HERE";
+$redirectUri = "PLACE_YOUR_REDIRECT_URI_HERE";
+
 $provider = new \League\OAuth2\Client\Provider\GenericProvider([
-    'clientId'                => 'PLACE_YOUR_APP_CLIENT_ID_HERE',    // The client ID assigned to you by the provider
-    'clientSecret'            => 'PLACE_YOUR_APP_CLIENT_SECRET_HERE',    // The client password assigned to you by the provider
-    'redirectUri'             => 'PLACE_YOUR_REDIRECT_URL_HERE',
-    'urlAuthorize'            => 'PLACE_YOUR_AUTH_ENDPOINT_HERE',
-    'urlAccessToken'          => 'PLACE_YOUR_ACCESSTOKEN_ENDPOINT_HERE',
-    'urlResourceOwnerDetails' => 'PLACE_YOUR_USER_INFO_ENDPOINT_HERE',
+    'clientId'                => $clientID,    // The client ID assigned to you by the provider
+    'clientSecret'            => $clientSecret,    // The client password assigned to you by the provider
+    'redirectUri'             => $redirectUri,
+    'urlAuthorize'            => $appUrl.'/oauth2/authorize',
+    'urlAccessToken'          => $appUrl.'/oauth2/token',
+    'urlResourceOwnerDetails' => $appUrl.'/oauth2/userInfo',
     'scopes' => 'openid'
 ]);
 ?>
